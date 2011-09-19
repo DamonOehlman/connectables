@@ -1,0 +1,30 @@
+{
+    "name": "connectables",
+    "description": "Useful middleware for Connect",
+    "tags": ["connect", "middleware", "rack"],
+    "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+    "version": "0.0.1",
+    "main": "index",
+    
+    "engines": { "node": "0.4.x || 0.5.x" },
+    
+    "dependencies": {
+    },
+    
+    "devDependencies": {
+        "vows": "0.5.x",
+        "connect": "x.x.x"
+    },
+    
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/DamonOehlman/connectables.git"
+    },
+    
+    "bugs": {
+        "web": "http://github.com/DamonOehlman/connectables/issues"
+    },
+
+    "contributors": [
+    ]
+}
