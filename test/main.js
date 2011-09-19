@@ -9,7 +9,14 @@ var server = connect.createServer(
     connect.logger(),
     
     connectables.router(function(router) {
-        router.get('/', sayHello);
+        router.get('/', function(req, res, next) {
+            res.end('Hi');
+        });
+        
+        router.get('/docs/:doc', function(req, res, next) {
+            res.end('You asked for the doc: ' + req.params.doc);
+        });
+        
         router.get('/test/subpath?', sayHello);
         router.get('', sayHello);
         router.get('/paramtest/:param?', sayHello);
