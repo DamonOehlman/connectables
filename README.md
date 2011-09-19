@@ -49,3 +49,29 @@ To be completed
 ### Wildcard Sections
 
 To be implemented.
+
+## Alternative Initialization
+
+An alternative way to use the router and define / remove the routes is to initialize the router without providing the callback function:
+
+```js
+var connectables = require('connectables'),
+	router = connectables.router();
+```
+
+Initializing the router in this way returns the the router instance instead of the request handler function.  You can then reference use this router instance to programmatically add and remove routes as required:
+
+```js
+router.get('/', function(req, res, next) {
+	res.end('Hi again');
+});
+```
+
+You do of course, still need to register the router as connect middleware though.  This is done by calling the `init` method of the router instance:
+
+```js
+var server = connect.createServer(
+    connect.logger(),
+    router.init()
+);
+```
