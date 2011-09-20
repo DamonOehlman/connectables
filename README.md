@@ -68,7 +68,6 @@ var server = connect.createServer(
 In similar fashion to Sinatra routes, the connectables router supports wildcards:
 
 ```js
-```js
 var server = connect.createServer(
     connect.logger(),
     
