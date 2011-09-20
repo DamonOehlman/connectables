@@ -26,6 +26,15 @@ var server = connect.createServer(
             res.end('You asked for doc id: ' + req.params.id);
         });
         
+        router.get('/the/*/*/on/the/*', function(req, res, next) {
+            var splat = req.params['*'],
+                phrase = 'the ' + (splat[0] || '') + ' ' + 
+                    (splat[1] || '') + ' ' + 
+                    'on the ' + (splat[2] || '');
+            
+            res.end(phrase);
+        });
+        
         router.get('/test/subpath?', sayHello);
         router.get('', sayHello);
         router.get('/paramtest/:param?', sayHello);

@@ -65,7 +65,27 @@ var server = connect.createServer(
 
 ### Wildcard Sections
 
-To be implemented.
+In similar fashion to Sinatra routes, the connectables router supports wildcards:
+
+```js
+```js
+var server = connect.createServer(
+    connect.logger(),
+    
+    connectables.router(function(router) {
+        router.get('/the/*/*/on/the/*', function(req, res, next) {
+            var splat = req.params['*'],
+                phrase = 'the ' + (splat[0] || '') + ' ' + 
+                    (splat[1] || '') + ' ' + 
+                    'on the ' + (splat[2] || '');
+            
+            res.end(phrase);
+        });
+    })
+);
+```
+Having a look at the code above, you can probably see that the multiple wildcard parameter
+matches are added to the `*` parameter values.  You will also see that in the case above the parameter values are passed back as an array rather than a single value.  This is the default behaviour when multiple parameters with the same name are encountered.
 
 ## Alternative Initialization
 
