@@ -35,8 +35,8 @@ var server = connect.createServer(
     connect.logger(),
     
     connectables.router(function(router) {
-        router.get('/docs/:doc', function(req, res, next) {
-            res.end('You asked for the doc: ' + req.params.doc);
+        router.get('/doc/:id', function(req, res, next) {
+            res.end('You asked for doc id: ' + req.params.id);
         });
     })
 );
@@ -51,8 +51,13 @@ var server = connect.createServer(
     connect.logger(),
     
     connectables.router(function(router) {
-        router.get('/docs/:doc?', function(req, res, next) {
-            res.end('You asked for the doc: ' + req.params.doc);
+        router.get('/docs/:category?', function(req, res, next) {
+            if (! req.params.category) {
+                res.end('No category specified, guess I should list all the docs');
+            }
+            else {
+                res.end('You asked for the doc category: ' + req.params.category);
+            }
         });
     })
 );

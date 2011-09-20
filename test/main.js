@@ -13,8 +13,17 @@ var server = connect.createServer(
             res.end('Hi');
         });
         
-        router.get('/docs/:doc', function(req, res, next) {
-            res.end('You asked for the doc: ' + req.params.doc);
+        router.get('/docs/:category?', function(req, res, next) {
+            if (! req.params.category) {
+                res.end('No category specified, guess I should list all the docs');
+            }
+            else {
+                res.end('You asked for the doc category: ' + req.params.category);
+            }
+        });
+        
+        router.get('/doc/:id', function(req, res, next) {
+            res.end('You asked for doc id: ' + req.params.id);
         });
         
         router.get('/test/subpath?', sayHello);
