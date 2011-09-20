@@ -44,7 +44,19 @@ var server = connect.createServer(
 
 ### Optional Parameters
 
-To be completed
+Using similar code to what is shown above, you can make parameterized urls with optional parameters:
+
+```js
+var server = connect.createServer(
+    connect.logger(),
+    
+    connectables.router(function(router) {
+        router.get('/docs/:doc?', function(req, res, next) {
+            res.end('You asked for the doc: ' + req.params.doc);
+        });
+    })
+);
+```
 
 ### Wildcard Sections
 
