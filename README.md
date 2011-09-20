@@ -86,6 +86,10 @@ var server = connect.createServer(
 Having a look at the code above, you can probably see that the multiple wildcard parameter
 matches are added to the `*` parameter values.  You will also see that in the case above the parameter values are passed back as an array rather than a single value.  This is the default behaviour when multiple parameters with the same name are encountered.
 
+## Query Parameter Handling
+
+The connectables router patches the request object to supply query string parameters as an object literal.  This might be duplication with core connect and/or node functionality and this is being investigated...
+
 ## Alternative Initialization
 
 An alternative way to use the router and define / remove the routes is to initialize the router without providing the callback function:
