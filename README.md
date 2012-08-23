@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/DamonOehlman/connectables.png)](http://travis-ci.org/DamonOehlman/connectables)
 # connectables
 
 Middleware extras for the excellent [connect](https://github.com/senchalabs/connect) Node.js middleware layer.
