@@ -10,9 +10,6 @@
     "version": "0.0.1",
     "main": "index",
     "license": "MIT",
-    "dependencies": {
-        "gendocs": "^2.0.1"
-    },
     "devDependencies": {
         "connect": "x.x.x",
         "vows": "0.5.x"
